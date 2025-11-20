@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Trends SaaS – MVP</title>
+  <meta name="description" content="Simple form to choose a niche and industry to find content trends.">
+  <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+  <div class="shell">
+    <p class="app-title">Content Trends</p>
+
+    <section class="card">
+      <header class="card-header">
+        <div class="card-title">
+          <span>Find your next content angle</span>
+          <span class="badge">Step 1</span>
+        </div>
+        <p class="card-subtitle">
+          Choose a niche and industry. The system will return the best trends and 3 content ideas based on real data.
+        </p>
+      </header>
+
+      <form method="POST" action="http://localhost:5678/webhook-test/api/trends">
+        <div class="field">
+          <label for="niche">Niche</label>
+          <input type="text" id="niche" name="niche" placeholder="e.g. Fitness, Real estate, SaaS" required>
+        </div>
+
+        <div class="field">
+          <label for="industry">Industry</label>
+          <input type="text" id="industry" name="industry" placeholder="e.g. Health, Real Estate, Finance" required>
+        </div>
+
+        <div class="field">
+          <label for="language">Content language</label>
+          <select id="language" name="language" required>
+            <option value="">Choose a language…</option>
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button type="submit">
+            Get 3 content ideas ↗
+          </button>
+          <p class="small-note">
+            Next version: live trend scoring + export to content calendar.
+          </p>
+        </div>
+      </form>
+
+    </section>
+  </div>
+</body>
+</html>
